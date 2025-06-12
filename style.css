@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  background-color: #e30613;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 20px;
+  width: 900px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.dropdown:hover .mega-menu {
+  display: flex;
+}
+
+.mega-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.mega-column h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #e30613;
+}
+
+.mega-column ul {
+  list-style: none;
+}
+
+.mega-column ul li {
+  margin-bottom: 8px;
+}
+
+.mega-column ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.mega-column ul li a:hover {
+  color: #e30613;
+}
+
+.mega-column input {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
