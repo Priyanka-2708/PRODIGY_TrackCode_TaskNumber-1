@@ -1,9 +1,30 @@
-// Optional: Change navbar style on scroll
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const slideContainer = document.querySelector(".slides");
+
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+  slideContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Automatic Slide Change
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 5000);
+
 window.addEventListener("scroll", () => {
-  const nav = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    nav.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
-  } else {
-    nav.style.boxShadow = "none";
-  }
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
