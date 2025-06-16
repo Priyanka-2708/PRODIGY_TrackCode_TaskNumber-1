@@ -1,85 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prodigy Infotech Landing Page</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cozy Café</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6b4f4f;
+      color: white;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      color: #ffcc70;
+    }
+
+    .navbar.scrolled {
+      background-color: #5a3e36;
+      transition: background 0.3s;
+    }
+
+    .toggle-dark {
+      background: none;
+      border: 1px solid #fff;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .home {
+      padding-top: 80px;
+      text-align: center;
+      background: #fef6f0;
+      padding: 100px 20px 50px;
+    }
+
+    .home h1 span {
+      color: #b55b2a;
+    }
+
+    .home p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .menu {
+      background: #fff2e6;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .menu h2 {
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      padding: 8px;
+      width: 300px;
+      max-width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .dish-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .dish-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      min-width: 220px;
+    }
+
+    .dish-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .dish-card p {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #about, #contact, #testimonials, #more-info {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    .testimonial {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      font-style: italic;
+    }
+
+    .add-dish {
+      margin-top: 20px;
+    }
+
+    .add-dish input {
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">PRODIGY INFOTECH</div>
-    <nav>
-      <ul>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Cozy Café</div>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#menu">Menu</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#more-info">More Info</a></li>
       </ul>
+      <button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
     </nav>
   </header>
 
-  <!-- Home Section with Slider -->
-  <section id="home" class="slider-container">
-    <div class="slides">
-      <div class="slide active">
-        <img src="https://via.placeholder.com/900x400?text=Learn+With+Us" alt="Slide 1">
-        <div class="caption">Welcome to Prodigy Infotech</div>
-      </div>
-      <div class="slide">
-        <img src="https://via.placeholder.com/900x400?text=Internship+Programs" alt="Slide 2">
-        <div class="caption">Project-based Internships</div>
-      </div>
-      <div class="slide">
-        <img src="https://via.placeholder.com/900x400?text=Skill+Development" alt="Slide 3">
-        <div class="caption">Boost Your Career</div>
-      </div>
-    </div>
-    <button class="prev">❮</button>
-    <button class="next">❯</button>
+  <section id="home" class="home">
+    <h1>Welcome to <span>Cozy Café</span></h1>
+    <p>Where every bite tells a story.</p>
   </section>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>We provide various skill-based training and support:</p>
-    <div class="cards">
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>Learn HTML, CSS, JS and build real websites.</p>
+  <section id="menu" class="menu">
+    <h2>Our Specials</h2>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search for a dish...">
+    </div>
+    <div class="dish-container" id="dishContainer">
+      <div class="dish-card">
+        <img src="https://via.placeholder.com/200?text=Coffee" alt="Coffee">
+        <p>Coffee</p>
       </div>
-      <div class="card">
-        <h3>Data Science</h3>
-        <p>Analyze data using Python, Pandas, and Machine Learning.</p>
+      <div class="dish-card">
+        <img src="https://via.placeholder.com/200?text=Sandwich" alt="Sandwich">
+        <p>Sandwich</p>
       </div>
-      <div class="card">
-        <h3>App Development</h3>
-        <p>Create Android/iOS apps with real-time project exposure.</p>
+      <div class="dish-card">
+        <img src="https://via.placeholder.com/200?text=Donuts" alt="Donuts">
+        <p>Donuts</p>
       </div>
+    </div>
+    <div class="add-dish">
+      <input type="text" id="newDishName" placeholder="Dish name">
+      <input type="text" id="newDishImage" placeholder="Image URL">
+      <button onclick="addDish()">Add Dish</button>
     </div>
   </section>
 
-  <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p>We empower students and professionals with hands-on skills and project-based training programs.</p>
-    <ul>
-      <li>Trusted by 10,000+ learners</li>
-      <li>Flexible remote internships</li>
-      <li>Personal mentorship and certificates</li>
-    </ul>
+    <p>Cozy Café is your friendly neighborhood spot to relax and enjoy handcrafted coffee, artisanal bakes, and warm ambiance. We believe in quality and comfort. Established in 2022, we serve love in every bite.</p>
   </section>
 
-  <!-- Contact -->
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">"The ambiance is relaxing and the food is fantastic! Will visit again!" – Priya</div>
+    <div class="testimonial">"Best latte in town and amazing pastries. Cozy Café is a gem!" – Rahul</div>
+  </section>
+
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear from you. Reach out for queries or collaboration!</p>
-    <p>Email: info@prodigyinfotech.com</p>
-    <p>Phone: +91 98765 43210</p>
+    <h2>Contact</h2>
+    <p>Email: hello@cozycafe.com</p>
+    <p>Phone: +91 90000 11111</p>
+    <p>Address: 123 Food Street, Gourmet City, India</p>
   </section>
 
-  <script src="script.js"></script>
+  <section id="more-info">
+    <h2>More Information</h2>
+    <p>At Cozy Café, we take pride in sourcing the finest ingredients, offering seasonal specials, and fostering a community-friendly atmosphere. Whether you're here for a quiet study session or a lively catch-up with friends, there's a warm seat waiting for you.</p>
+  </section>
+
+  <a href="https://wa.me/919000011111" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      const dishes = document.querySelectorAll(".dish-card");
+      dishes.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(value) ? "block" : "none";
+      });
+    });
+
+    function addDish() {
+      const name = document.getElementById("newDishName").value;
+      const img = document.getElementById("newDishImage").value;
+      if (name && img) {
+        const container = document.getElementById("dishContainer");
+        const div = document.createElement("div");
+        div.className = "dish-card";
+        div.innerHTML = `<img src="${img}" alt="${name}"><p>${name}</p>`;
+        container.appendChild(div);
+        document.getElementById("newDishName").value = '';
+        document.getElementById("newDishImage").value = '';
+      }
+    }
+  </script>
 </body>
 </html>

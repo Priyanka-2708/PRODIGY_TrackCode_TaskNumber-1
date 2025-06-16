@@ -3,7 +3,7 @@ const slides = document.querySelectorAll(".slide");
 const slideContainer = document.querySelector(".slides");
 
 function showSlide(index) {
-  slides.forEach((slide) => slide.classList.remove("active"));
+  slides.forEach(slide => slide.classList.remove("active"));
   slides[index].classList.add("active");
   slideContainer.style.transform = `translateX(-${index * 100}%)`;
 }
@@ -18,13 +18,13 @@ document.querySelector(".prev").addEventListener("click", () => {
   showSlide(currentSlide);
 });
 
-// Automatic Slide Change
+// Auto change slide
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
 }, 5000);
-
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
+

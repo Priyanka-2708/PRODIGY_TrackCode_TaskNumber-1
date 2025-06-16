@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
+  font-family: 'Georgia', serif;
+  background: #fff9f5;
   text-align: center;
-  background-color: #f9f9f9;
+  line-height: 1.6;
 }
 .navbar {
-  background: #e60000;
+  background: #6b4f4f;
   color: white;
   padding: 1rem 2rem;
   position: fixed;
@@ -20,10 +20,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.3s;
-}
-.navbar.scrolled {
-  background: #222;
 }
 .navbar ul {
   list-style: none;
@@ -44,8 +40,7 @@ section {
 }
 h2 {
   font-size: 2.5rem;
-  color: #d60000;
-  margin-bottom: 20px;
+  color: #a0522d;
 }
 p {
   font-size: 1.2rem;
@@ -54,28 +49,25 @@ p {
 /* Cards */
 .cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 .card {
-  background: white;
-  border-radius: 12px;
+  background: #fff;
   padding: 20px;
   width: 250px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 .card:hover {
   transform: translateY(-10px);
 }
 .card h3 {
-  color: #222;
+  color: #6b4f4f;
   margin-bottom: 10px;
-}
-.card p {
-  font-size: 1rem;
 }
 
 /* Slider */
@@ -109,19 +101,195 @@ p {
 .prev, .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   font-size: 30px;
   background: rgba(255, 255, 255, 0.6);
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   cursor: pointer;
 }
 .prev { left: 10px; }
 .next { right: 10px; }
+
 ul {
   margin-top: 20px;
-  list-style-type: disc;
-  padding-left: 20px;
   text-align: left;
+  list-style-type: disc;
   display: inline-block;
+}
+.hero {
+  background: url('https://via.placeholder.com/1200x500?text=Welcome+to+Cozy+Cafe') no-repeat center center/cover;
+  color: white;
+  padding: 120px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.hero p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+.btn {
+  background-color: #a0522d;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#gallery {
+  background: #fff2e6;
+}
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.gallery-grid img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+#testimonials {
+  background: #fefefe;
+  padding: 50px 20px;
+}
+.testimonial {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #f5f5f5;
+  padding: 20px;
+  border-left: 5px solid #a0522d;
+  border-radius: 10px;
+}
+
+#newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+#newsletter input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+  border-radius: 5px;
+}
+#newsletter button {
+  padding: 10px 20px;
+  background-color: #a0522d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6b4f4f;
+  color: white;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links li a:hover {
+  color: #ffcc70;
+}
+
+/* Hero Section */
+.home {
+  padding-top: 80px;
+  text-align: center;
+  background: #fef6f0;
+  padding: 100px 20px 50px;
+}
+.home h1 span {
+  color: #b55b2a;
+}
+.home p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Menu Section */
+.menu {
+  background: #fff2e6;
+  padding: 60px 20px;
+  text-align: center;
+}
+.menu h2 {
+  margin-bottom: 30px;
+}
+.dish-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+.dish-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 220px;
+}
+.dish-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.dish-card p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* About & Contact */
+#about, #contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+.navbar.scrolled {
+  background-color: #5a3e36;
+  transition: background 0.3s;
 }
